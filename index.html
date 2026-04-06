@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playmind Sports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0B162C;
+            --cream: #F5E6CC;
+            --accent: #D4AF37;
+        }
+        body { 
+            background-color: var(--cream); 
+            color: var(--navy); 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        .hero-gradient { 
+            background: linear-gradient(135deg, #0B162C 0%, #1a2a4d 100%); 
+        }
+        .btn-primary { 
+            background-color: var(--accent); 
+            color: var(--navy); 
+            transition: all 0.3s ease-in-out; 
+            border: none;
+        }
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .card { 
+            background: white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+        .logo-nav { 
+            height: 100px; 
+            width: auto;
+            transition: transform 0.3s;
+        }
+        .logo-nav:hover {
+            transform: scale(1.05);
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.4s ease;
+            height: 80px; 
+            width: auto;
+            object-fit: contain;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.15);
+        }
+        
+        .insta-overlay {
+            background: rgba(11, 22, 44, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .aspect-square:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* Formulier styling */
+        input, select, textarea {
+            color: #F5E6CC !important;
+            background-color: transparent !important;
+        }
+        input::placeholder, textarea::placeholder {
+            color: rgba(245, 230, 204, 0.4);
+        }
+        option {
+            background-color: #0B162C;
+            color: #F5E6CC;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(93%) sepia(13%) saturate(542%) hue-rotate(349deg) brightness(101%) contrast(92%);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-8 py-4 bg-[#0B162C] text-[#F5E6CC] sticky top-0 z-50 shadow-xl">
+        <a href="index.html" class="flex items-center">
+            <img src="logo.png" alt="Playmind Sports Logo" class="logo-nav">
+        </a>
+        <div class="hidden md:flex space-x-10 font-bold uppercase tracking-widest text-sm">
+            <a href="#nieuws" class="hover:text-[#D4AF37]">Nieuws</a>
+            <a href="#galerij" class="hover:text-[#D4AF37]">Galerij</a>
+            <a href="#over-ons" class="hover:text-[#D4AF37]">Over Ons</a>
+            <a href="#contact" class="hover:text-[#D4AF37]">Lid Worden</a>
+        </div>
+        <div class="flex space-x-5 text-2xl">
+            <a href="https://www.tiktok.com/@playmindsports" target="_blank" class="hover:text-[#D4AF37]"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/playmindsports/" target="_blank" class="hover:text-[#D4AF37]"><i class="fab fa-instagram"></i></a>
+            <a href="https://nl.linkedin.com/company/playmind-sports-agency" target="_blank" class="hover:text-[#D4AF37]"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-[#D4AF37]"><i class="fab fa-facebook"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero-gradient text-[#F5E6CC] py-32 px-6 text-center">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase italic tracking-tighter">Domineer het Veld</h1>
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 font-light">“We willen het pleintjesvoetbal van vroeger naar de zaal brengen.”</p>
+        <a href="#contact" class="btn-primary px-12 py-5 rounded-full font-black text-xl inline-block uppercase tracking-widest">Meld je nu aan</a>
+    </header>
+
+    <section id="nieuws" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-4xl font-black uppercase italic">Club Nieuws</h2>
+                <div class="h-1 w-20 bg-[#D4AF37] mt-2"></div>
+            </div>
+            <p class="hidden md:block text-sm font-bold opacity-60">GEÜPDATE VIA LINKEDIN & FACEBOOK</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="card p-8">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">LinkedIn Update</span>
+                <h3 class="text-2xl font-bold my-4">Nieuwe Partnership met Lokale Gyms</h3>
+                <p class="text-gray-600 mb-6">We breiden onze trainingsfaciliteiten uit om onze spelers een nog betere conditietraining te bieden...</p>
+                <a href="https://nl.linkedin.com/company/playmind-sports-agency" target="_blank" class="text-[#0B162C] font-bold border-b-2 border-[#D4AF37] hover:border-[#0B162C] transition">Lees Bericht →</a>
+            </div>
+            <div class="card p-8 border-t-4 border-[#0B162C]">
+                <span class="text-xs font-bold text-blue-800 uppercase tracking-widest">Facebook Update</span>
+                <h3 class="text-2xl font-bold my-4">Toernooi Finale deze Zondag!</h3>
+                <p class="text-gray-600 mb-6">Kom ons vlaggenschip aanmoedigen tijdens de regionale finales om 18:00 uur. Wees erbij!</p>
+                <a href="#" class="text-[#0B162C] font-bold border-b-2 border-[#D4AF37] hover:border-[#0B162C] transition">Details Bekijken →</a>
+            </div>
+            <div class="card p-8">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Club Mededeling</span>
+                <h3 class="text-2xl font-bold my-4">Inschrijvingen Jeugdacademie</h3>
+                <p class="text-gray-600 mb-6">Er zijn nog enkele plekken beschikbaar voor de O16 en O18 teams voor het nieuwe seizoen.</p>
+                <a href="#contact" class="text-[#0B162C] font-bold border-b-2 border-[#D4AF37] hover:border-[#0B162C] transition">Direct Aanmelden →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerij" class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-4 italic uppercase">Volg @PlaymindSports op Instagram</h2>
+            <a href="https://www.instagram.com/playmindsports/" target="_blank" class="text-[#D4AF37] font-bold hover:underline mb-12 inline-block">Bekijk ons profiel →</a>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://www.instagram.com/playmindsports/" target="_blank" class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner group">
+                    <img src="insta1.png" class="object-cover w-full h-full group-hover:scale-110 transition duration-700" alt="Instagram Post 1">
+                    <div class="insta-overlay absolute inset-0 flex items-center justify-center text-white text-3xl">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/playmindsports/" target="_blank" class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner group">
+                    <img src="insta2.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700" alt="Instagram Post 2">
+                    <div class="insta-overlay absolute inset-0 flex items-center justify-center text-white text-3xl">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/playmindsports/" target="_blank" class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner group">
+                    <img src="insta3.png" class="object-cover w-full h-full group-hover:scale-110 transition duration-700" alt="Instagram Post 3">
+                    <div class="insta-overlay absolute inset-0 flex items-center justify-center text-white text-3xl">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/playmindsports/" target="_blank" class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner group">
+                    <img src="insta4.png" class="object-cover w-full h-full group-hover:scale-110 transition duration-700" alt="Instagram Post 4">
+                    <div class="insta-overlay absolute inset-0 flex items-center justify-center text-white text-3xl">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="over-ons" class="py-24 px-6 max-w-5xl mx-auto text-center">
+        <div class="relative">
+            <div class="inline-block relative">
+                <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#D4AF37] opacity-20 rounded-full"></div>
+                <h2 class="text-5xl font-black mb-12 italic uppercase leading-none">Onze <span class="text-[#D4AF37]">Historie.</span></h2>
+            </div>
+            
+            <div class="space-y-6 text-gray-700 leading-relaxed text-lg mb-16">
+                <p>In Amsterdam, een stad vol kansen maar ook uitdagingen, ontstond het idee voor een nieuwe sportclub: <strong>Playmind Sports</strong>. In Amsterdam-Zuidoost was er een gebrek aan mogelijkheden voor jongeren om hun talenten te ontwikkelen.</p>
+                <p>Adam besloot dat het anders moest. Hij zag sport als een middel om jongeren met elkaar te verbinden en hen nieuwe kansen te bieden. Playmind Sports werd een bron van hoop en verbinding.</p>
+            </div>
+            
+            <div class="bg-[#0B162C] p-8 md:p-12 rounded-3xl text-[#F5E6CC] shadow-xl max-w-3xl mx-auto">
+                <h3 class="font-black text-2xl mb-8 uppercase italic tracking-tighter border-b border-[#D4AF37] pb-2 inline-block">Wie is wie</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Voorzitter</span><span class="text-xl font-bold">Adam de Vries</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Vicevoorzitter</span><span class="text-xl font-bold">Jamal Dorder</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Bestuursadviseur</span><span class="text-xl font-bold">Nicky Dorder</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Jeugd Coordinator</span><span class="text-xl font-bold">Daninho Doorsen</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-[#0B162C] text-[#F5E6CC]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-black mb-6 uppercase italic">Klaar voor de volgende stap?</h2>
+            <p class="mb-16 text-xl opacity-80">Word onderdeel van Playmind Sports. Vul het formulier in om je aan te melden.</p>
+            
+            <form action="https://formspree.io/f/info@playmind.nl" method="POST" class="grid md:grid-cols-2 gap-8 text-left">
+                
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Voornaam *</label>
+                    <input type="text" name="Voornaam" required placeholder="Je voornaam" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Achternaam *</label>
+                    <input type="text" name="Achternaam" required placeholder="Je achternaam" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Geboortedatum *</label>
+                    <input type="date" name="Geboortedatum" required class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">E-mailadres *</label>
+                    <input type="email" name="Email" required placeholder="naam@voorbeeld.nl" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+
+                <div class="flex flex-col md:col-span-2">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Telefoonnummer *</label>
+                    <input type="tel" name="Telefoonnummer" required placeholder="Bijv. +31 6 12345678" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+
+                <div class="flex flex-col md:col-span-2">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Categorie *</label>
+                    <select name="Categorie" required class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition w-full">
+                        <option value="" disabled selected>Kies een categorie...</option>
+                        <option value="jeugd o17">Jeugd O17</option>
+                        <option value="jeugd o19">Jeugd O19</option>
+                        <option value="senioren">Senioren</option>
+                        <option value="dames">Dames</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Huidige club? *</label>
+                    <input type="text" name="Huidige_Club" required placeholder="Bijv. AFC, geen club" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Huidige niveau? *</label>
+                    <input type="text" name="Huidig_Niveau" required placeholder="Bijv. 1e klasse, Recreatief" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Positie(s)? *</label>
+                    <input type="text" name="Posities" required placeholder="Bijv. Verdediger, Aanvaller, Keeper" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Ervaring met Futsal? *</label>
+                    <input type="text" name="Ervaring_Futsal" required placeholder="Bijv. 3 jaar, beginner" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
+                </div>
+
+                <div class="md:col-span-2 text-center mt-8">
+                    <button type="submit" class="btn-primary w-full md:w-auto px-16 py-5 rounded-full font-black uppercase tracking-widest">Inschrijving Versturen</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center text-gray-500 text-sm">
+        <p class="font-bold uppercase tracking-widest text-[10px] mb-8 opacity-60 italic">Trots om samen te werken met onze partners</p>
+        <div class="flex flex-wrap justify-center items-center gap-12 mb-14 px-6">
+            <img src="JeugdfondsSPORTCULTUUR.png" alt="Jeugdfonds" class="partner-logo">
+            <img src="knvb logo 2026.png" alt="KNVB" class="partner-logo">
+            <img src="wellvest logo.jfif" alt="Wellvest" class="partner-logo">
+        </div>
+
+        <p class="font-bold uppercase tracking-widest text-xs mb-4">© 2026 Playmind Sports. Alle rechten voorbehouden.</p>
+        <div class="flex justify-center space-x-8 text-2xl">
+            <a href="https://www.tiktok.com/@playmindsports" target="_blank" class="hover:text-[#0B162C] transition"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/playmindsports/" target="_blank" class="hover:text-[#0B162C] transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://nl.linkedin.com/company/playmind-sports-agency" target="_blank" class="hover:text-[#0B162C] transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-[#0B162C] transition"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
