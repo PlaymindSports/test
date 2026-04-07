@@ -18,6 +18,12 @@
             font-family: 'Inter', sans-serif; 
             scroll-behavior: smooth;
         }
+        
+        /* OPLOSSING VOOR HET SCROLLEN: zorgt dat kopjes niet onder het menu vallen */
+        section {
+            scroll-margin-top: 120px;
+        }
+
         .hero-gradient { 
             background: linear-gradient(135deg, #0B162C 0%, #1a2a4d 100%); 
         }
@@ -26,6 +32,7 @@
             color: var(--navy); 
             transition: all 0.3s ease-in-out; 
             border: none;
+            text-align: center;
         }
         .btn-primary:hover { 
             transform: translateY(-3px); 
@@ -70,6 +77,23 @@
             opacity: 1;
         }
 
+        /* Accordion / Vacature Styling */
+        .vacature-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+        }
+        .vacature-card.active .vacature-content {
+            max-height: 1000px; 
+            padding-top: 20px;
+        }
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+        .vacature-card.active .rotate-icon {
+            transform: rotate(180deg);
+        }
+
         /* Formulier styling */
         input, select, textarea {
             color: #F5E6CC !important;
@@ -97,6 +121,7 @@
             <a href="#nieuws" class="hover:text-[#D4AF37]">Nieuws</a>
             <a href="#galerij" class="hover:text-[#D4AF37]">Galerij</a>
             <a href="#over-ons" class="hover:text-[#D4AF37]">Over Ons</a>
+            <a href="#vacatures" class="hover:text-[#D4AF37]">Vacatures</a>
             <a href="#contact" class="hover:text-[#D4AF37]">Lid Worden</a>
         </div>
         <div class="flex space-x-5 text-2xl">
@@ -183,18 +208,76 @@
                 <h2 class="text-5xl font-black mb-12 italic uppercase leading-none">Onze <span class="text-[#D4AF37]">Historie.</span></h2>
             </div>
             
-            <div class="space-y-6 text-gray-700 leading-relaxed text-lg mb-16">
-                <p>In Amsterdam, een stad vol kansen maar ook uitdagingen, ontstond het idee voor een nieuwe sportclub: <strong>Playmind Sports</strong>. In Amsterdam-Zuidoost was er een gebrek aan mogelijkheden voor jongeren om hun talenten te ontwikkelen.</p>
-                <p>Adam besloot dat het anders moest. Hij zag sport als een middel om jongeren met elkaar te verbinden en hen nieuwe kansen te bieden. Playmind Sports werd een bron van hoop en verbinding.</p>
+            <div class="space-y-6 text-gray-700 text-left leading-relaxed text-lg mb-4">
+                <p>In Amsterdam, een stad vol kansen maar ook uitdagingen, ontstond het idee voor een nieuwe sportclub: <strong>Playmind Sports</strong>. In Amsterdam-Zuidoost was er een gebrek aan mogelijkheden voor jongeren om hun talenten te ontwikkelen. Veel gezinnen hadden het financieel moeilijk, en de beschikbare sportvoorzieningen waren beperkt. Voor de jeugd was het vaak lastig om positieve afleiding te vinden, wat soms leidde tot verveling en zelfs problemen op straat.</p>
+                <p>Adam besloot dat het anders moest. Hij zag sport als een middel om jongeren met elkaar te verbinden en hen nieuwe kansen te bieden. Hij begon bescheiden met voetbaltrainingen, die hij zelf begeleidde. Daarbij legde hij not alleen de nadruk op de sport zelf, maar ook op discipline en teamwork.</p>
+                <p>Al snel groeide Playmind Sports uit tot een populaire plek waar jongeren van verschillende achtergronden samenkwamen. Voetbal was de basis, maar al gauw ontstond er een sterke verbondenheid onder de jongeren. De club bood een veilige en positieve omgeving waar jongeren elkaar beter leerden begrijpen en er een sterke onderlinge band ontstond. Playmind Sports werd een bron van hoop en verbinding in een stad waar kansen niet altijd vanzelfsprekend zijn.</p>
             </div>
-            
+        </div>
+    </section>
+
+    <section id="wie-is-wie" class="bg-white py-24 px-6 border-t border-gray-100 shadow-inner">
+        <div class="max-w-5xl mx-auto text-center">
             <div class="bg-[#0B162C] p-8 md:p-12 rounded-3xl text-[#F5E6CC] shadow-xl max-w-3xl mx-auto">
                 <h3 class="font-black text-2xl mb-8 uppercase italic tracking-tighter border-b border-[#D4AF37] pb-2 inline-block">Wie is wie</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
                     <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Voorzitter</span><span class="text-xl font-bold">Adam de Vries</span></div>
                     <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Vicevoorzitter</span><span class="text-xl font-bold">Jamal Dorder</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Secretaris</span><span class="text-xl font-bold">Denis Milanovic</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Penningmeester</span><span class="text-xl font-bold">Rashied</span></div>
                     <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Bestuursadviseur</span><span class="text-xl font-bold">Nicky Dorder</span></div>
                     <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Jeugd Coordinator</span><span class="text-xl font-bold">Daninho Doorsen</span></div>
+                    <div class="flex flex-col"><span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Social Media</span><span class="text-xl font-bold">Soufiane</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vacatures" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black uppercase italic">Werken bij Playmind</h2>
+            <div class="h-1 w-20 bg-[#D4AF37] mt-2 mx-auto"></div>
+        </div>
+
+        <div class="vacature-card card p-8 cursor-pointer group" onclick="this.classList.toggle('active')">
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-bold text-[#D4AF37] uppercase tracking-widest">Vacature</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase italic group-hover:text-[#D4AF37] transition">Hoofdtrainer Playmind Sports 1</h3>
+                </div>
+                <div class="rotate-icon text-2xl text-[#0B162C]">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div class="vacature-content text-gray-700">
+                <div class="grid md:grid-cols-2 gap-8 py-6 border-t border-gray-100 mt-4">
+                    <div>
+                        <h4 class="font-black uppercase text-sm mb-3 text-[#0B162C]">Taken:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>Je coacht het team tijdens de wedstrijden.</li>
+                            <li>Je bent verantwoordelijk voor voetbaltechnische beslissingen tijdens wedstrijden.</li>
+                            <li>Je organiseert structureel trainingen voor de selectie (Playmind 1 & Playmind 2).</li>
+                            <li>Periodiek overleg met de voorzitter.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-black uppercase text-sm mb-3 text-[#0B162C]">Verwachtingen:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>Je bent enthousiast over zaalvoetbal.</li>
+                            <li>Je bent leergierig en je wilt jezelf graag ontwikkelen als coach.</li>
+                            <li>Betrokkenheid en inlevingsvermogen voor spelers van het tweede team.</li>
+                            <li>Het over kunnen brengen van de speelwijze en tactiek.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                    <h4 class="font-black uppercase text-sm mb-3 text-[#0B162C]">Aanbod:</h4>
+                    <p class="text-sm mb-2">● Club financiert KNVB opleiding futsalcoach 1 of 2.</p>
+                    <p class="text-sm">● Mogelijkheid tot een passend maandelijkse vergoeding.</p>
+                </div>
+                <div class="text-center">
+                    <a href="mailto:info@playmind.nl?subject=Sollicitatie: Hoofdtrainer Playmind Sports 1" class="btn-primary px-10 py-4 rounded-full font-black uppercase tracking-widest inline-block w-full md:w-auto">Solliciteer Nu</a>
                 </div>
             </div>
         </div>
@@ -206,7 +289,6 @@
             <p class="mb-16 text-xl opacity-80">Word onderdeel van Playmind Sports. Vul het formulier in om je aan te melden.</p>
             
             <form action="https://formspree.io/f/info@playmind.nl" method="POST" class="grid md:grid-cols-2 gap-8 text-left">
-                
                 <div class="flex flex-col">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Voornaam *</label>
                     <input type="text" name="Voornaam" required placeholder="Je voornaam" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
@@ -215,7 +297,6 @@
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Achternaam *</label>
                     <input type="text" name="Achternaam" required placeholder="Je achternaam" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
                 </div>
-
                 <div class="flex flex-col">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Geboortedatum *</label>
                     <input type="date" name="Geboortedatum" required class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
@@ -224,12 +305,10 @@
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">E-mailadres *</label>
                     <input type="email" name="Email" required placeholder="naam@voorbeeld.nl" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
                 </div>
-
                 <div class="flex flex-col md:col-span-2">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Telefoonnummer *</label>
                     <input type="tel" name="Telefoonnummer" required placeholder="Bijv. +31 6 12345678" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
                 </div>
-
                 <div class="flex flex-col md:col-span-2">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Categorie *</label>
                     <select name="Categorie" required class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition w-full">
@@ -240,7 +319,6 @@
                         <option value="dames">Dames</option>
                     </select>
                 </div>
-
                 <div class="flex flex-col">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Huidige club? *</label>
                     <input type="text" name="Huidige_Club" required placeholder="Bijv. AFC, geen club" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
@@ -249,7 +327,6 @@
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Huidige niveau? *</label>
                     <input type="text" name="Huidig_Niveau" required placeholder="Bijv. 1e klasse, Recreatief" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
                 </div>
-
                 <div class="flex flex-col">
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Positie(s)? *</label>
                     <input type="text" name="Posities" required placeholder="Bijv. Verdediger, Aanvaller, Keeper" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
@@ -258,7 +335,6 @@
                     <label class="mb-3 text-xs font-bold uppercase tracking-widest opacity-60">Ervaring met Futsal? *</label>
                     <input type="text" name="Ervaring_Futsal" required placeholder="Bijv. 3 jaar, beginner" class="border-b-2 border-[#F5E6CC] py-3 focus:outline-none focus:border-[#D4AF37] transition">
                 </div>
-
                 <div class="md:col-span-2 text-center mt-8">
                     <button type="submit" class="btn-primary w-full md:w-auto px-16 py-5 rounded-full font-black uppercase tracking-widest">Inschrijving Versturen</button>
                 </div>
@@ -273,7 +349,6 @@
             <img src="knvb logo 2026.png" alt="KNVB" class="partner-logo">
             <img src="wellvest logo.jfif" alt="Wellvest" class="partner-logo">
         </div>
-
         <p class="font-bold uppercase tracking-widest text-xs mb-4">© 2026 Playmind Sports. Alle rechten voorbehouden.</p>
         <div class="flex justify-center space-x-8 text-2xl">
             <a href="https://www.tiktok.com/@playmindsports" target="_blank" class="hover:text-[#0B162C] transition"><i class="fab fa-tiktok"></i></a>
